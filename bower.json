@@ -1,0 +1,18 @@
+{
+  "name": "APPVIAJES.5",
+  "authors": [
+    "Jessica Melero",
+    "Lia Angelica Ionita"
+  ],
+  "description": "Creación de una página web de viajes",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
