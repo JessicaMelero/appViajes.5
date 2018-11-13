@@ -15,3 +15,7 @@ gulp.task('min', () => {
     .pipe(uglify)
     .pipe(gulp.dest('js/app.min.js'))
 });
+
+gulp.watch(['index.html']).on('change', () =>{
+    browserSync.reload();
+})
