@@ -16,6 +16,13 @@ gulp.task('min', () => {
     .pipe(gulp.dest('js/app.min.js'))
 });
 
-gulp.watch(['index.html']).on('change', () =>{
+gulp.watch('js/**/*.js').on('change',function(){
+    returngulp.src('js/app.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('js/app.min.js'))
+});
+
+
+gulp.watch(['index.html', 'js/app.js']).on('change', () =>{
     browserSync.reload();
-})
+});
