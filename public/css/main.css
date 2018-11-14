@@ -1,0 +1,12 @@
+.fondo{
+    background-image: url(/public/img/header.jpg);
+    background-size: 100% 100%;
+}
+
+.iconoweb {
+    height: 200px;
+    width: 200px;
+    margin-right: 200px;
+}
+
+.shared.wa {background-position: 0px -90px; background-color: #0dc143;}

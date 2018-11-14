@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var browserSync = require('browser-sync');
 
-//Ejecuta por defecto browser y min
+// Ejecuta por defecto browser y min
 gulp.task("default", ['browser', 'min']);
 
 // Levanta el servidor
@@ -13,21 +13,23 @@ gulp.task('browser', () => {
         }
     })
 });
+
 //  Minifica el proyecto
 gulp.task('min', () => {
-    return gulp.src('js/app.js')
+    return gulp.src('public/css/main.css', 'public/js/main.js')
     .pipe(uglify)
-    .pipe(gulp.dest('js/app.min.js'))
+    .pipe(gulp.dest('public/css/main.min.js', 'public/js/main.min.js'))
 });
 
-// Escucha si hay cambior en cualquier archivo dentro de js y con extension .js
-gulp.watch('js/**/*.js').on('change',function(){
-    returngulp.src('js/app.js')
+// Escucha si hay cambios en cualquier archivo dentro de css y con extension .css
+// y dentro de js y con extension .js
+gulp.watch('public/css/**/*.css', 'public/js/**/*.js').on('change',function(){
+    returngulp.src('public/css/main.css', 'public/js/main.js')
     .pipe(uglify())
-    .pipe(gulp.dest('js/app.min.js'))
+    .pipe(gulp.dest('public/css/main.min.css', 'public/js/main.min.js'))
 });
 
-// Escucha si hay cambios en index.html y en app.js
-gulp.watch(['index.html', 'js/app.js']).on('change', () =>{
+// Escucha si hay cambios en index.html, en main.css y en main.js
+gulp.watch(['index.html', 'public/css/main.js', 'public/js/main.js']).on('change', () =>{
     browserSync.reload();
 });
